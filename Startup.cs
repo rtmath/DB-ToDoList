@@ -5,7 +5,7 @@ using Nancy.Owin;
 using Nancy;
 using Nancy.ViewEngines.Razor;
 
-namespace EnterNamespaceHere //replace with your desired namespace
+namespace ToDoList
 {
   public class Startup
   {
@@ -13,6 +13,10 @@ namespace EnterNamespaceHere //replace with your desired namespace
     {
       app.UseOwin(x => x.UseNancy());
     }
+  }
+  public static class DBConfiguration
+  {
+      public static string ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=todo;Integrated Security=SSPI;";
   }
   public class CustomRootPathProvider : IRootPathProvider
   {
